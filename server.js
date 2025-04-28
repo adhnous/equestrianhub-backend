@@ -1,9 +1,10 @@
-// Cleaned version of server.js with Sequelize only
+// Cleaned and Updated version of server.js with Sequelize + /api/seed route
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
 const sequelize = require('./config/database')
+const seedEntities = require('./seedEntities') // 🌟 Import seeding script
 
 const app = express()
 
@@ -37,7 +38,7 @@ app.use((req, res, next) => {
   next()
 })
 
-// Mount routes
+// Mount API routes
 app.use('/api/auth', loginRoutes)
 app.use('/api/trainees', traineeRoutes)
 app.use('/api/trainers', trainerRoutes)
@@ -49,9 +50,26 @@ app.use('/api/profile', profileRoutes)
 app.use('/api/notifications', notificationRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/admin/users', userRoutes)
+app.use('/api/admins', adminRoutes)
 
-app.use('/api/admins', adminRoutes);
-
+// 🌟 Add temporary /api/seed route
+app.post('/api/seed', async (req, res) => {
+  try {
+    await seedEntities();
+    res.status(200).json({
+      success: true,
+      message: 'Database seeded successfully',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Seeding failed:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Seeding failed',
+      error: error.message
+    });
+  }
+});
 
 // Health check & test endpoints
 app.get('/api/test', (req, res) => {
@@ -90,8 +108,7 @@ app.use((err, req, res, next) => {
 // Start the server after syncing Sequelize
 const PORT = process.env.PORT || 5000;
 
-
-sequelize.sync( { alter: true }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
   app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
     console.log(`🩺 Health check: http://localhost:${PORT}/health`);
@@ -100,4 +117,3 @@ sequelize.sync( { alter: true }).then(() => {
   console.error('Failed to sync database:', err);
   process.exit(1);
 });
-
