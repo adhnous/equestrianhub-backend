@@ -1,0 +1,430 @@
+{
+  "info": {
+    "name": "EquestrianHub API Test Collection (Auto ID)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/auth",
+          "host": [
+            "http://localhost:5000/api/auth"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"adminpass\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users",
+          "host": [
+            "http://localhost:5000/api/users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/users",
+          "host": [
+            "http://localhost:5000/api/users"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"newuser\",\n  \"email\": \"new@example.com\",\n  \"password\": \"123\",\n  \"role\": \"trainee\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Admins",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/admins/users",
+          "host": [
+            "http://localhost:5000/api/admins/users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Admin",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/admins/users",
+          "host": [
+            "http://localhost:5000/api/admins/users"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin2\",\n  \"email\": \"admin2@example.com\",\n  \"password\": \"admin123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Trainers",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/trainers",
+          "host": [
+            "http://localhost:5000/api/trainers"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Trainer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/trainers",
+          "host": [
+            "http://localhost:5000/api/trainers"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Trainer One\",\n  \"email\": \"trainer@example.com\",\n  \"gender\": \"male\",\n  \"phone\": \"123456\",\n  \"level\": \"beginner\",\n  \"description\": \"test\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Trainees",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/trainees",
+          "host": [
+            "http://localhost:5000/api/trainees"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Trainee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/trainees",
+          "host": [
+            "http://localhost:5000/api/trainees"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Trainee A\",\n  \"email\": \"trainee@example.com\",\n  \"gender\": \"female\",\n  \"age\": 14,\n  \"level\": \"starter\",\n  \"trainerId\": \"trainer-id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Horses",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/horses",
+          "host": [
+            "http://localhost:5000/api/horses"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Horse",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/horses",
+          "host": [
+            "http://localhost:5000/api/horses"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Horse A\",\n  \"age\": 5,\n  \"breed\": \"Arabian\",\n  \"gender\": \"male\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Schedules",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/schedules",
+          "host": [
+            "http://localhost:5000/api/schedules"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Schedule",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/schedules",
+          "host": [
+            "http://localhost:5000/api/schedules"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"trainerId\": \"trainer-id\",\n  \"date\": \"2025-04-22\",\n  \"time\": \"14:00\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Competitions",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/competitions",
+          "host": [
+            "http://localhost:5000/api/competitions"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Competition",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/competitions",
+          "host": [
+            "http://localhost:5000/api/competitions"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Comp 1\",\n  \"date\": \"2025-06-01\",\n  \"location\": \"Arena\",\n  \"participants\": []\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Training Classes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/training-classes",
+          "host": [
+            "http://localhost:5000/api/training-classes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Training Class",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/training-classes",
+          "host": [
+            "http://localhost:5000/api/training-classes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Basic Riding 101\",\n  \"trainerId\": \"trainer-id\",\n  \"scheduleDate\": \"2025-05-01T10:00:00Z\",\n  \"enrolledTrainees\": []\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Notifications",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/notifications",
+          "host": [
+            "http://localhost:5000/api/notifications"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Notification",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/notifications",
+          "host": [
+            "http://localhost:5000/api/notifications"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Reminder\",\n  \"message\": \"Your class is tomorrow\",\n  \"userId\": \"user-id\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/profile/user-id",
+          "host": [
+            "http://localhost:5000/api/profile/user-id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Profile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/profile/user-id",
+          "host": [
+            "http://localhost:5000/api/profile/user-id"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"updated@example.com\"\n}"
+        }
+      }
+    }
+  ]
+}
