@@ -34,8 +34,11 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5000',
   'https://equestrianhub-frontend.web.app',
-  'https://equestrianhub-backend.onrender.com'
+  'https://equestrianhub-backend.onrender.com',
+  'https://equestrianhub-backend-production.up.railway.app' // ✅ Add Railway backend URL
 ];
+
+
 
 app.use(cors({
   origin: function (origin, callback) {
