@@ -1,0 +1,36 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# SQLite database
+data/database.sqlite
+scripts/data/database.sqlite
+tools/data/database.sqlite
+
+# Logs
+logs/
+*.log
+
+# IDE folders
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.tmp
+
+# Build artifacts
+dist/
+build/
+
+# Local Git settings
+.git/
