@@ -131,7 +131,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server after syncing Sequelize
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 sequelize.sync({ alter: true }).then(() => {
   app.listen(PORT, () => {
